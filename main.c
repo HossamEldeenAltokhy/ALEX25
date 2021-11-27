@@ -20,30 +20,30 @@ int main(void) {
     init_BTNs();
     while (1) {
         
-//        if(isPressed(BTN1)){
-//            if(PORTC & (1<<LED1)){
-//                LED1_OFF();
-//            }else{
-//                LED1_ON();
-//            }
-//            _delay_ms(500);
-//        }else{
-//            
-//        }
-        
-        
         if(isPressed(BTN1)){
-            if(flag){
+            if(checkLED(LED1)){
                 LED1_OFF();
-                flag = 0;
             }else{
                 LED1_ON();
-                flag = 1;
             }
             _delay_ms(500);
         }else{
             
         }
+        
+        
+//        if(isPressed(BTN1)){
+//            if(flag){
+//                LED1_OFF();
+//                flag = 0;
+//            }else{
+//                LED1_ON();
+//                flag = 1;
+//            }
+//            _delay_ms(500);
+//        }else{
+//            
+//        }
         
         
         

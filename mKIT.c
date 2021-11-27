@@ -32,6 +32,22 @@ void LED2_OFF() {
     PORTD &= ~(1 << LED2);
 }
 
+int checkLED(int LED_No){
+    switch(LED_No){
+        case LED0:
+            return (PORTC & (1<<LED0))? 1: 0;
+        case LED1:
+            return (PORTC & (1<<LED1))? 1: 0;
+        case LED2:
+            return (PORTD & (1<<LED2))? 1: 0;
+        default:
+            return 0;
+    }
+}
+
+
+
+
 void init_Relay() {
     DDRA |= (1 << RELAY);
 }

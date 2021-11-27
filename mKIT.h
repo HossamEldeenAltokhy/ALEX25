@@ -32,6 +32,7 @@ void LED1_OFF();
 void LED2_ON();
 void LED2_OFF();
 
+int checkLED(int LED_No);
 
 void init_Relay();
 void Relay_ON();
