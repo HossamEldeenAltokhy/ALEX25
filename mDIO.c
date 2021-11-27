@@ -87,11 +87,69 @@ void setPinIN(int PORT_No, int PIN_No) {
     }
 }
 
-void setPin_A(int PIN_No, int state) {
-    if (state) {
-        PORTA |= (1 << PIN_No);
-    } else {
-        PORTA &= ~(1 << PIN_No);
+void setPin(int PORT_No, int PIN_No) {
+    switch (PORT_No) {
+        case _PA:
+            PORTA |= (1 << PIN_No);
+            break;
+
+        case _PB:
+            PORTB |= (1 << PIN_No);
+            break;
+
+        case _PC:
+            PORTC |= (1 << PIN_No);
+            break;
+
+        case _PD:
+            PORTD |= (1 << PIN_No);
+            break;
 
     }
 }
+
+void resetPin(int PORT_No, int PIN_No) {
+    switch (PORT_No) {
+        case _PA:
+            PORTA &= ~(1 << PIN_No);
+            break;
+
+        case _PB:
+            PORTB &= ~(1 << PIN_No);
+            break;
+
+        case _PC:
+            PORTC &= ~(1 << PIN_No);
+            break;
+
+        case _PD:
+            PORTD &= ~(1 << PIN_No);
+            break;
+
+    }
+}
+
+
+
+void setPortData(int PORT_No, unsigned char data){
+     switch (PORT_No) {
+        case _PA:
+            PORTA = data;
+            break;
+
+        case _PB:
+            PORTB = data;
+            break;
+
+        case _PC:
+            PORTC = data;
+            break;
+
+        case _PD:
+            PORTD = data;
+            break;
+
+    }
+}
+    
+                                                  

@@ -23,10 +23,10 @@ void setPinOUT(int PORT_No, int PIN_No);
 void setPinIN(int PORT_No, int PIN_No);
 // PORT DATA OUT
 void setPortData(int PORT_No, unsigned char data);
-void setPin_A(int PIN_No, int state);
-void setPin_B(int PIN_No, int state);
-void setPin_C(int PIN_No, int state);
-void setPin_D(int PIN_No, int state);
+void setPin(int PORT_No, int PIN_No);
+void resetPin(int PORT_No, int PIN_No);
+
+
 // READ DATA IN
 // CHECK
 
