@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c mKIT.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c mKIT.c mDIO.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/mKIT.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/mKIT.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/mKIT.o ${OBJECTDIR}/mDIO.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/mKIT.o.d ${OBJECTDIR}/mDIO.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/mKIT.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/mKIT.o ${OBJECTDIR}/mDIO.o
 
 # Source Files
-SOURCEFILES=main.c mKIT.c
+SOURCEFILES=main.c mKIT.c mDIO.c
 
 
 
@@ -106,6 +106,12 @@ ${OBJECTDIR}/mKIT.o: mKIT.c  .generated_files/flags/default/3a5b86fa5c66f121224a
 	@${RM} ${OBJECTDIR}/mKIT.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/mKIT.o.d" -MT "${OBJECTDIR}/mKIT.o.d" -MT ${OBJECTDIR}/mKIT.o -o ${OBJECTDIR}/mKIT.o mKIT.c 
 	
+${OBJECTDIR}/mDIO.o: mDIO.c  .generated_files/flags/default/b5a5ea3f5811c98597968bb3094ad72ec73217af .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mDIO.o.d 
+	@${RM} ${OBJECTDIR}/mDIO.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/mDIO.o.d" -MT "${OBJECTDIR}/mDIO.o.d" -MT ${OBJECTDIR}/mDIO.o -o ${OBJECTDIR}/mDIO.o mDIO.c 
+	
 else
 ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/92d5a2d85445b7fcc93458cc831db9041af3e8f .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
 	@${MKDIR} "${OBJECTDIR}" 
@@ -118,6 +124,12 @@ ${OBJECTDIR}/mKIT.o: mKIT.c  .generated_files/flags/default/1dd5d66fd77ab7a5961d
 	@${RM} ${OBJECTDIR}/mKIT.o.d 
 	@${RM} ${OBJECTDIR}/mKIT.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/mKIT.o.d" -MT "${OBJECTDIR}/mKIT.o.d" -MT ${OBJECTDIR}/mKIT.o -o ${OBJECTDIR}/mKIT.o mKIT.c 
+	
+${OBJECTDIR}/mDIO.o: mDIO.c  .generated_files/flags/default/b0f3b5567ba584f091362b1055609002b8e9195e .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mDIO.o.d 
+	@${RM} ${OBJECTDIR}/mDIO.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/mDIO.o.d" -MT "${OBJECTDIR}/mDIO.o.d" -MT ${OBJECTDIR}/mDIO.o -o ${OBJECTDIR}/mDIO.o mDIO.c 
 	
 endif
 

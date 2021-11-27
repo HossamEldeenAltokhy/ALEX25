@@ -18,18 +18,23 @@ int main(void) {
     init_Buzzer();
     init_Relay();
     init_BTNs();
+    LED1_ON();
+    LED2_ON();
+    LED0_ON();
+    
     while (1) {
         
-        if(isPressed(BTN1)){
-            if(checkLED(LED1)){
-                LED1_OFF();
-            }else{
-                LED1_ON();
-            }
-            _delay_ms(500);
-        }else{
-            
-        }
+        
+//        if(isPressed(BTN1)){
+//            if(checkLED(LED1)){
+//                LED1_OFF();
+//            }else{
+//                LED1_ON();
+//            }
+//            _delay_ms(500);
+//        }else{
+//            
+//        }
         
         
 //        if(isPressed(BTN1)){

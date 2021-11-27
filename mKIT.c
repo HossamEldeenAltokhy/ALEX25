@@ -1,15 +1,20 @@
 #include <avr/io.h>
 #include "mKIT.h"
+#include "mDIO.h"
 
 void initLEDS() {
     // Direction DDR
 
-    DDRC |= (1 << LED0) | (1 << LED1);
-    DDRD |= (1 << LED2);
+//    DDRC |= (1 << LED0) | (1 << LED1);
+    setPinOUT(_PC, LED0);
+    setPinOUT(_PC, LED1);
+    setPinOUT(_PD, LED2);
+    
 }
 
 void LED0_ON() {
     PORTC |= (1 << LED0);
+//    setPin_C(LED0, HIGH);
 }
 
 void LED0_OFF() {
