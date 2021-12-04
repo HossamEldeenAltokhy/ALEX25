@@ -7,6 +7,10 @@
       <itemPath>mKIT.h</itemPath>
       <itemPath>mDIO.h</itemPath>
       <itemPath>mLCD_8bits.h</itemPath>
+      <itemPath>mLCD_4bits.h</itemPath>
+      <itemPath>mExternalINT.h</itemPath>
+      <itemPath>mKeypad.h</itemPath>
+      <itemPath>config.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -19,6 +23,9 @@
       <itemPath>mKIT.c</itemPath>
       <itemPath>mDIO.c</itemPath>
       <itemPath>mLCD_8bits.c</itemPath>
+      <itemPath>mLCD_4bits.c</itemPath>
+      <itemPath>mExternalINT.c</itemPath>
+      <itemPath>mKeypad.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

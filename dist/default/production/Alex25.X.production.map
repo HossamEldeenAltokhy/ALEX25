@@ -23,8 +23,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/mKIT.o
  .data          0x0000000000000000        0x0 build/default/production/mKIT.o
  .bss           0x0000000000000000        0x0 build/default/production/mKIT.o
- .text.initLEDS
-                0x0000000000000000       0x26 build/default/production/mKIT.o
  .text.LED0_ON  0x0000000000000000        0x4 build/default/production/mKIT.o
  .text.LED0_OFF
                 0x0000000000000000        0x4 build/default/production/mKIT.o
@@ -52,26 +50,100 @@ Discarded input sections
                 0x0000000000000000        0x4 build/default/production/mKIT.o
  .text.isPressed
                 0x0000000000000000       0x36 build/default/production/mKIT.o
- .debug_info    0x0000000000000000      0x448 build/default/production/mKIT.o
- .debug_abbrev  0x0000000000000000       0xbd build/default/production/mKIT.o
- .debug_loc     0x0000000000000000      0x100 build/default/production/mKIT.o
- .debug_aranges
-                0x0000000000000000       0x98 build/default/production/mKIT.o
- .debug_ranges  0x0000000000000000       0x88 build/default/production/mKIT.o
- .debug_line    0x0000000000000000      0x21a build/default/production/mKIT.o
- .debug_str     0x0000000000000000        0xa build/default/production/mKIT.o
- .comment       0x0000000000000000       0x30 build/default/production/mKIT.o
- .debug_frame   0x0000000000000000      0x114 build/default/production/mKIT.o
  .text          0x0000000000000000        0x0 build/default/production/mDIO.o
  .data          0x0000000000000000        0x0 build/default/production/mDIO.o
  .bss           0x0000000000000000        0x0 build/default/production/mDIO.o
+ .text.setPortOUT
+                0x0000000000000000       0x32 build/default/production/mDIO.o
  .text.setPortIN
                 0x0000000000000000       0x2a build/default/production/mDIO.o
  .text.setPinIN
                 0x0000000000000000       0x7a build/default/production/mDIO.o
+ .text.setPin   0x0000000000000000       0x72 build/default/production/mDIO.o
+ .text.resetPin
+                0x0000000000000000       0x7a build/default/production/mDIO.o
+ .text.setPortData
+                0x0000000000000000       0x2a build/default/production/mDIO.o
  .text          0x0000000000000000        0x0 build/default/production/mLCD_8bits.o
  .data          0x0000000000000000        0x0 build/default/production/mLCD_8bits.o
  .bss           0x0000000000000000        0x0 build/default/production/mLCD_8bits.o
+ .text.LCD_EN   0x0000000000000000       0x26 build/default/production/mLCD_8bits.o
+ .text.LCD_cmd  0x0000000000000000       0x22 build/default/production/mLCD_8bits.o
+ .text.LCD_write
+                0x0000000000000000       0x22 build/default/production/mLCD_8bits.o
+ .text.LCD_clear
+                0x0000000000000000        0x8 build/default/production/mLCD_8bits.o
+ .text.initLCD  0x0000000000000000       0x68 build/default/production/mLCD_8bits.o
+ .text.LCD_str  0x0000000000000000       0x1e build/default/production/mLCD_8bits.o
+ .text.LCD_num  0x0000000000000000       0x3a build/default/production/mLCD_8bits.o
+ .text.LCD_shiftRight
+                0x0000000000000000       0x2c build/default/production/mLCD_8bits.o
+ .text.LCD_shiftLeft
+                0x0000000000000000       0x2c build/default/production/mLCD_8bits.o
+ .text.LCD_goto_xy
+                0x0000000000000000       0x1c build/default/production/mLCD_8bits.o
+ .debug_info    0x0000000000000000      0x874 build/default/production/mLCD_8bits.o
+ .debug_abbrev  0x0000000000000000      0x1d0 build/default/production/mLCD_8bits.o
+ .debug_loc     0x0000000000000000      0x318 build/default/production/mLCD_8bits.o
+ .debug_aranges
+                0x0000000000000000       0x68 build/default/production/mLCD_8bits.o
+ .debug_ranges  0x0000000000000000       0x58 build/default/production/mLCD_8bits.o
+ .debug_line    0x0000000000000000      0x28a build/default/production/mLCD_8bits.o
+ .debug_str     0x0000000000000000       0x38 build/default/production/mLCD_8bits.o
+ .comment       0x0000000000000000       0x30 build/default/production/mLCD_8bits.o
+ .debug_frame   0x0000000000000000      0x108 build/default/production/mLCD_8bits.o
+ .text          0x0000000000000000        0x0 build/default/production/mLCD_4bits.o
+ .data          0x0000000000000000        0x0 build/default/production/mLCD_4bits.o
+ .bss           0x0000000000000000        0x0 build/default/production/mLCD_4bits.o
+ .text.LCD_EN_4bits
+                0x0000000000000000       0x2c build/default/production/mLCD_4bits.o
+ .text.LCD_cmd_4bits
+                0x0000000000000000       0x52 build/default/production/mLCD_4bits.o
+ .text.LCD_write_4bits
+                0x0000000000000000       0x52 build/default/production/mLCD_4bits.o
+ .text.LCD_clear_4bits
+                0x0000000000000000        0x8 build/default/production/mLCD_4bits.o
+ .text.initLCD_4bits
+                0x0000000000000000       0xa8 build/default/production/mLCD_4bits.o
+ .text.LCD_str_4bits
+                0x0000000000000000       0x1e build/default/production/mLCD_4bits.o
+ .text.LCD_num_4bits
+                0x0000000000000000       0x3a build/default/production/mLCD_4bits.o
+ .text.LCD_goto_xy_4bits
+                0x0000000000000000       0x1c build/default/production/mLCD_4bits.o
+ .text.LCD_shiftRight_4bits
+                0x0000000000000000       0x3e build/default/production/mLCD_4bits.o
+ .text.LCD_shiftLeft_4bits
+                0x0000000000000000       0x3e build/default/production/mLCD_4bits.o
+ .debug_info    0x0000000000000000      0xa8d build/default/production/mLCD_4bits.o
+ .debug_abbrev  0x0000000000000000      0x1d0 build/default/production/mLCD_4bits.o
+ .debug_loc     0x0000000000000000      0x508 build/default/production/mLCD_4bits.o
+ .debug_aranges
+                0x0000000000000000       0x68 build/default/production/mLCD_4bits.o
+ .debug_ranges  0x0000000000000000       0x58 build/default/production/mLCD_4bits.o
+ .debug_line    0x0000000000000000      0x31b build/default/production/mLCD_4bits.o
+ .debug_str     0x0000000000000000       0x21 build/default/production/mLCD_4bits.o
+ .comment       0x0000000000000000       0x30 build/default/production/mLCD_4bits.o
+ .debug_frame   0x0000000000000000      0x108 build/default/production/mLCD_4bits.o
+ .text          0x0000000000000000        0x0 build/default/production/mExternalINT.o
+ .data          0x0000000000000000        0x0 build/default/production/mExternalINT.o
+ .bss           0x0000000000000000        0x0 build/default/production/mExternalINT.o
+ .text          0x0000000000000000        0x0 build/default/production/mKeypad.o
+ .data          0x0000000000000000        0x0 build/default/production/mKeypad.o
+ .bss           0x0000000000000000        0x0 build/default/production/mKeypad.o
+ .text.initKeyPad
+                0x0000000000000000       0x5c build/default/production/mKeypad.o
+ .text.getKey   0x0000000000000000      0x254 build/default/production/mKeypad.o
+ .debug_info    0x0000000000000000      0x8ed build/default/production/mKeypad.o
+ .debug_abbrev  0x0000000000000000      0x109 build/default/production/mKeypad.o
+ .debug_loc     0x0000000000000000      0x510 build/default/production/mKeypad.o
+ .debug_aranges
+                0x0000000000000000       0x28 build/default/production/mKeypad.o
+ .debug_ranges  0x0000000000000000       0x18 build/default/production/mKeypad.o
+ .debug_line    0x0000000000000000      0x325 build/default/production/mKeypad.o
+ .debug_str     0x0000000000000000       0x31 build/default/production/mKeypad.o
+ .comment       0x0000000000000000       0x30 build/default/production/mKeypad.o
+ .debug_frame   0x0000000000000000       0x34 build/default/production/mKeypad.o
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
@@ -109,16 +181,25 @@ Discarded input sections
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(itoa_ncheck.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(itoa_ncheck.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(itoa_ncheck.o)
+ .text.avrlibc  0x0000000000000000       0x16 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(itoa_ncheck.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(itoa_ncheck.o)
  .stack.descriptors
                 0x0000000000000000       0x1b c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(itoa_ncheck.o)
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(utoa_ncheck.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(utoa_ncheck.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(utoa_ncheck.o)
+ .text.avrlibc  0x0000000000000000       0x34 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(utoa_ncheck.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(utoa_ncheck.o)
  .stack.descriptors
                 0x0000000000000000       0x36 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(utoa_ncheck.o)
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strrev.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strrev.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strrev.o)
+ .text.avrlibc  0x0000000000000000       0x20 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strrev.o)
+ .stack.descriptors.hdr
+                0x0000000000000000        0xe c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strrev.o)
  .stack.descriptors
                 0x0000000000000000       0x14 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strrev.o)
 
@@ -142,6 +223,9 @@ LOAD build/default/production/main.o
 LOAD build/default/production/mKIT.o
 LOAD build/default/production/mDIO.o
 LOAD build/default/production/mLCD_8bits.o
+LOAD build/default/production/mLCD_4bits.o
+LOAD build/default/production/mExternalINT.o
+LOAD build/default/production/mKeypad.o
 START GROUP
 LOAD c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a
 END GROUP
@@ -397,19 +481,14 @@ END GROUP
  *(.comment)
  .comment       0x0000000000000000       0x2f build/default/production/main.o
                                          0x30 (size before relaxing)
+ .comment       0x000000000000002f       0x30 build/default/production/mKIT.o
  .comment       0x000000000000002f       0x30 build/default/production/mDIO.o
- .comment       0x000000000000002f       0x30 build/default/production/mLCD_8bits.o
+ .comment       0x000000000000002f       0x30 build/default/production/mExternalINT.o
 
 .stack.descriptors.hdr
-                0x0000000000000000       0x38
+                0x0000000000000000        0xe
  .stack.descriptors.hdr
                 0x0000000000000000        0xe c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
- .stack.descriptors.hdr
-                0x000000000000000e        0xe c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(itoa_ncheck.o)
- .stack.descriptors.hdr
-                0x000000000000001c        0xe c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(utoa_ncheck.o)
- .stack.descriptors.hdr
-                0x000000000000002a        0xe c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strrev.o)
 
 .note.gnu.build-id
  *(.note.gnu.build-id)
@@ -426,56 +505,64 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000       0xc0
+.debug_aranges  0x0000000000000000      0x140
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x20 build/default/production/main.o
+                0x0000000000000000       0x28 build/default/production/main.o
  .debug_aranges
-                0x0000000000000020       0x50 build/default/production/mDIO.o
+                0x0000000000000028       0xa0 build/default/production/mKIT.o
  .debug_aranges
-                0x0000000000000070       0x50 build/default/production/mLCD_8bits.o
+                0x00000000000000c8       0x58 build/default/production/mDIO.o
+ .debug_aranges
+                0x0000000000000120       0x20 build/default/production/mExternalINT.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x12a7
+.debug_info     0x0000000000000000     0x127e
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x4e6 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_info    0x00000000000004e6      0x2b0 build/default/production/main.o
- .debug_info    0x0000000000000796      0x3a6 build/default/production/mDIO.o
- .debug_info    0x0000000000000b3c      0x76b build/default/production/mLCD_8bits.o
+ .debug_info    0x00000000000004e6      0x2f9 build/default/production/main.o
+ .debug_info    0x00000000000007df      0x463 build/default/production/mKIT.o
+ .debug_info    0x0000000000000c42      0x3d9 build/default/production/mDIO.o
+ .debug_info    0x000000000000101b      0x263 build/default/production/mExternalINT.o
 
-.debug_abbrev   0x0000000000000000      0x797
+.debug_abbrev   0x0000000000000000      0x702
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x4a3 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_abbrev  0x00000000000004a3       0x97 build/default/production/main.o
- .debug_abbrev  0x000000000000053a       0x8d build/default/production/mDIO.o
- .debug_abbrev  0x00000000000005c7      0x1d0 build/default/production/mLCD_8bits.o
+ .debug_abbrev  0x00000000000004a3       0xbe build/default/production/main.o
+ .debug_abbrev  0x0000000000000561       0xbd build/default/production/mKIT.o
+ .debug_abbrev  0x000000000000061e       0x8d build/default/production/mDIO.o
+ .debug_abbrev  0x00000000000006ab       0x57 build/default/production/mExternalINT.o
 
-.debug_line     0x0000000000000000      0x58f
+.debug_line     0x0000000000000000      0x6fb
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x119 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_line    0x0000000000000119       0x50 build/default/production/main.o
- .debug_line    0x0000000000000169      0x227 build/default/production/mDIO.o
- .debug_line    0x0000000000000390      0x1ff build/default/production/mLCD_8bits.o
+ .debug_line    0x0000000000000119       0x92 build/default/production/main.o
+ .debug_line    0x00000000000001ab      0x231 build/default/production/mKIT.o
+ .debug_line    0x00000000000003dc      0x268 build/default/production/mDIO.o
+ .debug_line    0x0000000000000644       0xb7 build/default/production/mExternalINT.o
 
-.debug_frame    0x0000000000000000      0x158
+.debug_frame    0x0000000000000000      0x258
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0x24 build/default/production/main.o
- .debug_frame   0x0000000000000024       0x84 build/default/production/mDIO.o
- .debug_frame   0x00000000000000a8       0xb0 build/default/production/mLCD_8bits.o
+ .debug_frame   0x0000000000000000       0x7c build/default/production/main.o
+ .debug_frame   0x000000000000007c      0x124 build/default/production/mKIT.o
+ .debug_frame   0x00000000000001a0       0x94 build/default/production/mDIO.o
+ .debug_frame   0x0000000000000234       0x24 build/default/production/mExternalINT.o
 
-.debug_str      0x0000000000000000      0x1dd
+.debug_str      0x0000000000000000      0x1dc
  *(.debug_str)
  .debug_str     0x0000000000000000      0x196 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_str     0x0000000000000196        0x0 build/default/production/main.o
- .debug_str     0x0000000000000196        0xf build/default/production/mDIO.o
- .debug_str     0x00000000000001a5       0x38 build/default/production/mLCD_8bits.o
+ .debug_str     0x0000000000000196       0x2d build/default/production/main.o
+ .debug_str     0x00000000000001c3        0xa build/default/production/mKIT.o
+ .debug_str     0x00000000000001cd        0xf build/default/production/mDIO.o
+ .debug_str     0x00000000000001dc        0x0 build/default/production/mExternalINT.o
 
-.debug_loc      0x0000000000000000      0x45c
+.debug_loc      0x0000000000000000      0x474
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x280 build/default/production/mDIO.o
- .debug_loc     0x0000000000000280      0x1dc build/default/production/mLCD_8bits.o
+ .debug_loc     0x0000000000000000      0x100 build/default/production/mKIT.o
+ .debug_loc     0x0000000000000100      0x300 build/default/production/mDIO.o
+ .debug_loc     0x0000000000000400       0x74 build/default/production/mExternalINT.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -495,11 +582,12 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000       0x90
+.debug_ranges   0x0000000000000000      0x100
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x10 build/default/production/main.o
- .debug_ranges  0x0000000000000010       0x40 build/default/production/mDIO.o
- .debug_ranges  0x0000000000000050       0x40 build/default/production/mLCD_8bits.o
+ .debug_ranges  0x0000000000000000       0x18 build/default/production/main.o
+ .debug_ranges  0x0000000000000018       0x90 build/default/production/mKIT.o
+ .debug_ranges  0x00000000000000a8       0x48 build/default/production/mDIO.o
+ .debug_ranges  0x00000000000000f0       0x10 build/default/production/mExternalINT.o
 
 .debug_macro
  *(.debug_macro)
@@ -512,102 +600,63 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x3c C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
 
-.text.resetPin  0x00000000000000a8       0x7a
- .text.resetPin
-                0x00000000000000a8       0x7a build/default/production/mDIO.o
-                0x00000000000000a8                resetPin
-
 .text.setPinOUT
-                0x0000000000000122       0x72
+                0x00000000000000a8       0x72
  .text.setPinOUT
-                0x0000000000000122       0x72 build/default/production/mDIO.o
-                0x0000000000000122                setPinOUT
+                0x00000000000000a8       0x72 build/default/production/mDIO.o
+                0x00000000000000a8                setPinOUT
 
-.text.setPin    0x0000000000000194       0x72
- .text.setPin   0x0000000000000194       0x72 build/default/production/mDIO.o
-                0x0000000000000194                setPin
+.text.init_INT  0x000000000000011a       0x50
+ .text.init_INT
+                0x000000000000011a       0x50 build/default/production/mExternalINT.o
+                0x000000000000011a                init_INT
 
-.text.initLCD   0x0000000000000206       0x68
- .text.initLCD  0x0000000000000206       0x68 build/default/production/mLCD_8bits.o
-                0x0000000000000206                initLCD
+.text.__vector_1
+                0x000000000000016a       0x48
+ .text.__vector_1
+                0x000000000000016a       0x48 build/default/production/main.o
+                0x000000000000016a                __vector_1
 
-.text.LCD_num   0x000000000000026e       0x3a
- .text.LCD_num  0x000000000000026e       0x3a build/default/production/mLCD_8bits.o
-                0x000000000000026e                LCD_num
+.text.togglePortData
+                0x00000000000001b2       0x3a
+ .text.togglePortData
+                0x00000000000001b2       0x3a build/default/production/mDIO.o
+                0x00000000000001b2                togglePortData
 
-.text.avrlibc   0x00000000000002a8       0x34
- .text.avrlibc  0x00000000000002a8       0x34 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(utoa_ncheck.o)
-                0x00000000000002a8                __utoa_ncheck
-                0x00000000000002aa                __utoa_common
+.text.initLEDS  0x00000000000001ec       0x26
+ .text.initLEDS
+                0x00000000000001ec       0x26 build/default/production/mKIT.o
+                0x00000000000001ec                initLEDS
 
-.text.setPortOUT
-                0x00000000000002dc       0x32
- .text.setPortOUT
-                0x00000000000002dc       0x32 build/default/production/mDIO.o
-                0x00000000000002dc                setPortOUT
+.text.main      0x0000000000000212       0x18
+ .text.main     0x0000000000000212       0x18 build/default/production/main.o
+                0x0000000000000212                main
 
-.text.setPortData
-                0x000000000000030e       0x2a
- .text.setPortData
-                0x000000000000030e       0x2a build/default/production/mDIO.o
-                0x000000000000030e                setPortData
+.text.LED0_Toggle
+                0x000000000000022a        0xa
+ .text.LED0_Toggle
+                0x000000000000022a        0xa build/default/production/mKIT.o
+                0x000000000000022a                LED0_Toggle
 
-.text.LCD_EN    0x0000000000000338       0x26
- .text.LCD_EN   0x0000000000000338       0x26 build/default/production/mLCD_8bits.o
-                0x0000000000000338                LCD_EN
-
-.text.LCD_cmd   0x000000000000035e       0x22
- .text.LCD_cmd  0x000000000000035e       0x22 build/default/production/mLCD_8bits.o
-                0x000000000000035e                LCD_cmd
-
-.text.LCD_write
-                0x0000000000000380       0x22
- .text.LCD_write
-                0x0000000000000380       0x22 build/default/production/mLCD_8bits.o
-                0x0000000000000380                LCD_write
-
-.text.avrlibc   0x00000000000003a2       0x20
- .text.avrlibc  0x00000000000003a2       0x20 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strrev.o)
-                0x00000000000003a2                strrev
-
-.text.LCD_str   0x00000000000003c2       0x1e
- .text.LCD_str  0x00000000000003c2       0x1e build/default/production/mLCD_8bits.o
-                0x00000000000003c2                LCD_str
-
-.text.avrlibc   0x00000000000003e0       0x16
- .text.avrlibc  0x00000000000003e0       0x16 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(itoa_ncheck.o)
-                0x00000000000003e0                __itoa_ncheck
-
-.text.main      0x00000000000003f6        0xe
- .text.main     0x00000000000003f6        0xe build/default/production/main.o
-                0x00000000000003f6                main
-
-.text.LCD_clear
-                0x0000000000000404        0x8
- .text.LCD_clear
-                0x0000000000000404        0x8 build/default/production/mLCD_8bits.o
-                0x0000000000000404                LCD_clear
-
-.text           0x000000000000040c        0x4
- .text          0x000000000000040c        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
-                0x000000000000040c                __vector_1
-                0x000000000000040c                __vector_12
-                0x000000000000040c                __bad_interrupt
-                0x000000000000040c                __vector_6
-                0x000000000000040c                __vector_3
-                0x000000000000040c                __vector_11
-                0x000000000000040c                __vector_13
-                0x000000000000040c                __vector_17
-                0x000000000000040c                __vector_19
-                0x000000000000040c                __vector_7
-                0x000000000000040c                __vector_5
-                0x000000000000040c                __vector_4
-                0x000000000000040c                __vector_9
-                0x000000000000040c                __vector_2
-                0x000000000000040c                __vector_15
-                0x000000000000040c                __vector_8
-                0x000000000000040c                __vector_14
-                0x000000000000040c                __vector_10
-                0x000000000000040c                __vector_16
-                0x000000000000040c                __vector_18
-                0x000000000000040c                __vector_20
+.text           0x0000000000000234        0x4
+ .text          0x0000000000000234        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
+                0x0000000000000234                __vector_12
+                0x0000000000000234                __bad_interrupt
+                0x0000000000000234                __vector_6
+                0x0000000000000234                __vector_3
+                0x0000000000000234                __vector_11
+                0x0000000000000234                __vector_13
+                0x0000000000000234                __vector_17
+                0x0000000000000234                __vector_19
+                0x0000000000000234                __vector_7
+                0x0000000000000234                __vector_5
+                0x0000000000000234                __vector_4
+                0x0000000000000234                __vector_9
+                0x0000000000000234                __vector_2
+                0x0000000000000234                __vector_15
+                0x0000000000000234                __vector_8
+                0x0000000000000234                __vector_14
+                0x0000000000000234                __vector_10
+                0x0000000000000234                __vector_16
+                0x0000000000000234                __vector_18
+                0x0000000000000234                __vector_20

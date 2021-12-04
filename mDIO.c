@@ -151,5 +151,21 @@ void setPortData(int PORT_No, unsigned char data){
 
     }
 }
+void togglePortData(int PORT_No){
+     switch (PORT_No) {
+        case _PA:
+            PORTA ^= 0xFF;
+            break;  
+        case _PB:
+            PORTB ^= 0xFF;
+            break;
+        case _PC:
+            PORTC ^= 0xFF;
+            break;
+        case _PD:
+            PORTD ^= 0xFF;
+            break;
+    }
+}
     
                                                   

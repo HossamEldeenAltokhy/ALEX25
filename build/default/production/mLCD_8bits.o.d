@@ -14,7 +14,7 @@ build/default/production/mLCD_8bits.o.d \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\math.h \
- mLCD_8bits.h mDIO.h \
+ mLCD_8bits.h mDIO.h mLCD_4bits.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\stdlib.h \
  c:\program\ files\microchip\xc8\v2.32\avr\lib\gcc\avr\5.4.0\include\stddef.h
 
@@ -49,6 +49,8 @@ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\math.h:
 mLCD_8bits.h:
 
 mDIO.h:
+
+mLCD_4bits.h:
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\stdlib.h:
 

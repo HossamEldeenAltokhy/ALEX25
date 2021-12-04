@@ -25,7 +25,7 @@ void setPinIN(int PORT_No, int PIN_No);
 void setPortData(int PORT_No, unsigned char data);
 void setPin(int PORT_No, int PIN_No);
 void resetPin(int PORT_No, int PIN_No);
-
+void togglePortData(int PORT_No);
 
 // READ DATA IN
 // CHECK

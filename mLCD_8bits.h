@@ -28,7 +28,8 @@ void LCD_num(int data);
 void LCD_clear();
 void LCD_goto_xy(int row, int coln);
 
-
+void LCD_shiftRight(int);
+void LCD_shiftLeft(int);
 void LCD_EN();
 #endif	/* MLCD_8BITS_H */
 

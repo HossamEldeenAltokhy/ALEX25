@@ -1,5 +1,6 @@
-build/default/production/main.o.d build/default/production/main.o: main.c \
- config.h c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h \
+build/default/production/mExternalINT.o.d \
+ build/default/production/mExternalINT.o: mExternalINT.c \
+ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\sfr_defs.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\inttypes.h \
  c:\program\ files\microchip\xc8\v2.32\avr\lib\gcc\avr\5.4.0\include\stdint.h \
@@ -9,14 +10,8 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\common.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\version.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\fuse.h \
- c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\lock.h mDIO.h \
- mExternalINT.h mKIT.h mLCD_4bits.h mKeypad.h \
- c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay.h \
- c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay_basic.h \
- c:\program\ files\microchip\xc8\v2.32\avr\avr\include\math.h \
- c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\interrupt.h
-
-config.h:
+ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\lock.h \
+ mExternalINT.h
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h:
 
@@ -40,20 +35,4 @@ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\lock.h:
 
-mDIO.h:
-
 mExternalINT.h:
-
-mKIT.h:
-
-mLCD_4bits.h:
-
-mKeypad.h:
-
-c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay.h:
-
-c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay_basic.h:
-
-c:\program\ files\microchip\xc8\v2.32\avr\avr\include\math.h:
-
-c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\interrupt.h:

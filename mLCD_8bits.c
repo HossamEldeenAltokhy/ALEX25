@@ -3,6 +3,7 @@
 #include <util/delay.h>
 #include "mLCD_8bits.h"
 #include "mDIO.h"
+#include "mLCD_4bits.h"
 #include <stdlib.h>
 
 void initLCD(void){
@@ -62,4 +63,29 @@ void LCD_num(int data){
     LCD_str(buffer);
            
     
+}
+
+void LCD_shiftRight(int shifts){
+    for(int i =0 ; i < shifts; i++){
+        LCD_cmd(0x1C);
+    }
+}
+void LCD_shiftLeft(int shifts){
+    for(int i =0 ; i < shifts; i++){
+        LCD_cmd(0x18);
+    }
+}
+
+void LCD_goto_xy(int row, int coln){
+    if(row == 0){
+            LCD_cmd(0x80 | coln);
+
+    }
+    else if(row == 1){
+            LCD_cmd(0xC0 | coln);
+
+    }
+    else{
+        // Nothing
+    }
 }

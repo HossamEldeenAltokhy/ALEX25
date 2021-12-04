@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c mKIT.c mDIO.c mLCD_8bits.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c mKIT.c mDIO.c mLCD_8bits.c mLCD_4bits.c mExternalINT.c mKeypad.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/mKIT.o ${OBJECTDIR}/mDIO.o ${OBJECTDIR}/mLCD_8bits.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/mKIT.o.d ${OBJECTDIR}/mDIO.o.d ${OBJECTDIR}/mLCD_8bits.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/mKIT.o ${OBJECTDIR}/mDIO.o ${OBJECTDIR}/mLCD_8bits.o ${OBJECTDIR}/mLCD_4bits.o ${OBJECTDIR}/mExternalINT.o ${OBJECTDIR}/mKeypad.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/mKIT.o.d ${OBJECTDIR}/mDIO.o.d ${OBJECTDIR}/mLCD_8bits.o.d ${OBJECTDIR}/mLCD_4bits.o.d ${OBJECTDIR}/mExternalINT.o.d ${OBJECTDIR}/mKeypad.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/mKIT.o ${OBJECTDIR}/mDIO.o ${OBJECTDIR}/mLCD_8bits.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/mKIT.o ${OBJECTDIR}/mDIO.o ${OBJECTDIR}/mLCD_8bits.o ${OBJECTDIR}/mLCD_4bits.o ${OBJECTDIR}/mExternalINT.o ${OBJECTDIR}/mKeypad.o
 
 # Source Files
-SOURCEFILES=main.c mKIT.c mDIO.c mLCD_8bits.c
+SOURCEFILES=main.c mKIT.c mDIO.c mLCD_8bits.c mLCD_4bits.c mExternalINT.c mKeypad.c
 
 
 
@@ -118,6 +118,24 @@ ${OBJECTDIR}/mLCD_8bits.o: mLCD_8bits.c  .generated_files/flags/default/337168f7
 	@${RM} ${OBJECTDIR}/mLCD_8bits.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/mLCD_8bits.o.d" -MT "${OBJECTDIR}/mLCD_8bits.o.d" -MT ${OBJECTDIR}/mLCD_8bits.o -o ${OBJECTDIR}/mLCD_8bits.o mLCD_8bits.c 
 	
+${OBJECTDIR}/mLCD_4bits.o: mLCD_4bits.c  .generated_files/flags/default/c43c6abf3a48ba30213ffd54f876cd0f75a89c18 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mLCD_4bits.o.d 
+	@${RM} ${OBJECTDIR}/mLCD_4bits.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/mLCD_4bits.o.d" -MT "${OBJECTDIR}/mLCD_4bits.o.d" -MT ${OBJECTDIR}/mLCD_4bits.o -o ${OBJECTDIR}/mLCD_4bits.o mLCD_4bits.c 
+	
+${OBJECTDIR}/mExternalINT.o: mExternalINT.c  .generated_files/flags/default/bab474df1076df824754c147d5d55ba606917671 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mExternalINT.o.d 
+	@${RM} ${OBJECTDIR}/mExternalINT.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/mExternalINT.o.d" -MT "${OBJECTDIR}/mExternalINT.o.d" -MT ${OBJECTDIR}/mExternalINT.o -o ${OBJECTDIR}/mExternalINT.o mExternalINT.c 
+	
+${OBJECTDIR}/mKeypad.o: mKeypad.c  .generated_files/flags/default/303476fe6ab56f8b2fb05bea48a212c23cee8b7b .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mKeypad.o.d 
+	@${RM} ${OBJECTDIR}/mKeypad.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1 -g -DDEBUG  -gdwarf-2  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/mKeypad.o.d" -MT "${OBJECTDIR}/mKeypad.o.d" -MT ${OBJECTDIR}/mKeypad.o -o ${OBJECTDIR}/mKeypad.o mKeypad.c 
+	
 else
 ${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/92d5a2d85445b7fcc93458cc831db9041af3e8f .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
 	@${MKDIR} "${OBJECTDIR}" 
@@ -142,6 +160,24 @@ ${OBJECTDIR}/mLCD_8bits.o: mLCD_8bits.c  .generated_files/flags/default/3032aa8f
 	@${RM} ${OBJECTDIR}/mLCD_8bits.o.d 
 	@${RM} ${OBJECTDIR}/mLCD_8bits.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/mLCD_8bits.o.d" -MT "${OBJECTDIR}/mLCD_8bits.o.d" -MT ${OBJECTDIR}/mLCD_8bits.o -o ${OBJECTDIR}/mLCD_8bits.o mLCD_8bits.c 
+	
+${OBJECTDIR}/mLCD_4bits.o: mLCD_4bits.c  .generated_files/flags/default/9a0c9f0f274fc077a4db982d8ef72850021b772 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mLCD_4bits.o.d 
+	@${RM} ${OBJECTDIR}/mLCD_4bits.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/mLCD_4bits.o.d" -MT "${OBJECTDIR}/mLCD_4bits.o.d" -MT ${OBJECTDIR}/mLCD_4bits.o -o ${OBJECTDIR}/mLCD_4bits.o mLCD_4bits.c 
+	
+${OBJECTDIR}/mExternalINT.o: mExternalINT.c  .generated_files/flags/default/3c4881c78216533a1a5f347e38e3130ead74a603 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mExternalINT.o.d 
+	@${RM} ${OBJECTDIR}/mExternalINT.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/mExternalINT.o.d" -MT "${OBJECTDIR}/mExternalINT.o.d" -MT ${OBJECTDIR}/mExternalINT.o -o ${OBJECTDIR}/mExternalINT.o mExternalINT.c 
+	
+${OBJECTDIR}/mKeypad.o: mKeypad.c  .generated_files/flags/default/5b1060bffe3d95275071c9fd3694b748679bd1a8 .generated_files/flags/default/2f9e58fd8ce1a2611b0e0fd33168db129b9285f3
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/mKeypad.o.d 
+	@${RM} ${OBJECTDIR}/mKeypad.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -x c -D__$(MP_PROCESSOR_OPTION)__   -mdfp="${DFP_DIR}/xc8"  -Wl,--gc-sections -O1 -ffunction-sections -fdata-sections -fshort-enums -funsigned-char -funsigned-bitfields -Wall -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD)  -gdwarf-3     -MD -MP -MF "${OBJECTDIR}/mKeypad.o.d" -MT "${OBJECTDIR}/mKeypad.o.d" -MT ${OBJECTDIR}/mKeypad.o -o ${OBJECTDIR}/mKeypad.o mKeypad.c 
 	
 endif
 

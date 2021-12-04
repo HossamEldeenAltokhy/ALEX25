@@ -21,6 +21,10 @@ void LED0_OFF() {
     PORTC &= ~(1 << LED0);
 }
 
+void LED0_Toggle() {
+    PORTC ^= (1 << LED0);
+}
+
 void LED1_ON() {
     PORTC |= (1 << LED1);
 }
