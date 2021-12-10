@@ -24,6 +24,7 @@
 #include "mKeypad.h"
 #include <util/delay.h>
 #include <avr/interrupt.h>
+#include "mADC.h"
 
 #endif	/* CONFIG_H */
 
