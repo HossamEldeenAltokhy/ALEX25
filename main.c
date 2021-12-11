@@ -25,7 +25,7 @@ int main(void) {
     /* Replace with your application code */
     initLCD_4bits();
     
-    init_ADC(CH0_CH1,_AREF, _PS128);
+    init_ADC(CH0,_AREF, _PS128);
     _delay_ms(50);
     
     sei();
