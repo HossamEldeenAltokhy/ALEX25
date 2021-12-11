@@ -10,7 +10,7 @@ void init_ADC(unsigned char ch,
     ADMUX |= (ref<<REFS0);
     ADCSRA |= freq & 0x07;// 00000111
     // Enable INTERRUPT
-//    ADCSRA |= (1<<ADIE);
+    ADCSRA |= (1<<ADIE);
     // ADC ENABLE
     ADCSRA |= (1<<ADEN);
 }
@@ -21,7 +21,7 @@ void ADC_SC(){
 
 short ADC_read(){
     
-    while(!(ADCSRA & (1<<ADIF)));
+    //while(!(ADCSRA & (1<<ADIF)));
     
     short x = ADCL;
     x |= (ADCH << 8);
