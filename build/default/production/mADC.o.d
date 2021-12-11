@@ -1,4 +1,4 @@
-build/default/production/main.o.d build/default/production/main.o: main.c \
+build/default/production/mADC.o.d build/default/production/mADC.o: mADC.c \
  config.h c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\sfr_defs.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\inttypes.h \

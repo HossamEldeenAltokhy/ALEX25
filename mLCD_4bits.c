@@ -59,7 +59,7 @@ void LCD_write_4bits(char data){
 
 void LCD_EN_4bits(){
     setPin(controlBits, EN);
-    _delay_ms(50);
+    _delay_ms(5);
     resetPin(controlBits, EN);
 }
 

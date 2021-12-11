@@ -30,7 +30,7 @@
 #define CH6  6
 #define CH7  7
 
-//#define CH0_CH0
+#define CH0_CH1   16
 void init_ADC(unsigned char ch, 
                 unsigned char ref,
                 unsigned char freq);
