@@ -27,17 +27,18 @@ void setCompareValue(unsigned char ocrValue);
 
 ISR(TIMER0_COMP_vect) {
     // Every Overflow event
-    static int counter = 1;
-    
+    static int counter = 0;
+    static unsigned char compareValue = 50;
     counter++;
     
-    togglePortData(_PA);
+    if(counter == 156){
+        counter = 0;    
+        compareValue +=50;
+        setCompareValue(compareValue);
 
-    setCompareValue(counter);
- 
-    if(counter == 255){
-        counter = 0;
     }
+    
+  
 }
 
 int main(void) {
@@ -46,7 +47,6 @@ int main(void) {
     setPortOUT(_PA);
     
     setCompareValue(100);
-    _delay_ms(10);
     init_Timer0(CTC, Timer_PS1024);
 
     // Global INT Enable
@@ -64,6 +64,7 @@ void setCompareValue(unsigned char ocrValue){
 }
 
 void init_Timer0(unsigned char mode, unsigned char Clk) {
+    setPinOUT(_PB, 3);
 
     switch (mode) {
         case NormalMode:
@@ -85,11 +86,10 @@ void init_Timer0(unsigned char mode, unsigned char Clk) {
             break;
     }
 
-    
+    TCCR0 |= (1<<COM00); // TOGGLE ON OC0 PIN
 
     // TCCR0... Timer Counter Control Register.
     // Selecting Clock source and value
-    TCCR0 &= Timer_OFF & 0xf8;
     TCCR0 |= Clk;
 
     //TCCR0 = (TCCR0 & 0xf8) | Clk;
