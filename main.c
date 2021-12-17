@@ -22,16 +22,20 @@
 #define FPWM        3
 
 void init_Timer0(unsigned char mode, unsigned char Clk);
+void setCompareValue(unsigned char ocrValue);
 
-ISR(TIMER0_OVF_vect) {
+
+ISR(TIMER0_COMP_vect) {
     // Every Overflow event
-    static int counter = 0;
+    static int counter = 1;
     
     counter++;
     
-    if (counter == 61) {
-        // Every One Second
-        ADC_SC();
+    togglePortData(_PA);
+
+    setCompareValue(counter);
+ 
+    if(counter == 255){
         counter = 0;
     }
 }
@@ -39,21 +43,24 @@ ISR(TIMER0_OVF_vect) {
 int main(void) {
     /* Replace with your application code */
 
-    int result;
-    initLCD_4bits();
-    init_ADC(CH0, _AREF ,_PS128);
-    init_Timer0(NormalMode, Timer_PS1024);
+    setPortOUT(_PA);
+    
+    setCompareValue(100);
+    _delay_ms(10);
+    init_Timer0(CTC, Timer_PS1024);
 
     // Global INT Enable
     sei();
     while (1) {
 
-       result =  ADC_read(); // pooling
-       LCD_clear_4bits();
-       LCD_num_4bits(result);
 
 
     }
+}
+
+void setCompareValue(unsigned char ocrValue){
+    
+    OCR0 = ocrValue;
 }
 
 void init_Timer0(unsigned char mode, unsigned char Clk) {
@@ -78,6 +85,7 @@ void init_Timer0(unsigned char mode, unsigned char Clk) {
             break;
     }
 
+    
 
     // TCCR0... Timer Counter Control Register.
     // Selecting Clock source and value
@@ -90,7 +98,8 @@ void init_Timer0(unsigned char mode, unsigned char Clk) {
 
     // Enable OVF Interrupt
 
-    TIMSK |= (1 << TOIE0);
+//    TIMSK |= (1 << TOIE0);
+    TIMSK |= (1 << OCIE0);
 
 
 }
