@@ -12,6 +12,7 @@
       <itemPath>mKeypad.h</itemPath>
       <itemPath>config.h</itemPath>
       <itemPath>mADC.h</itemPath>
+      <itemPath>mTimer0.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -28,6 +29,7 @@
       <itemPath>mExternalINT.c</itemPath>
       <itemPath>mKeypad.c</itemPath>
       <itemPath>mADC.c</itemPath>
+      <itemPath>mTimer0.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

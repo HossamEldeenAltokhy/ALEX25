@@ -1,13 +1,13 @@
 Archive member included to satisfy reference by file (symbol)
 
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o)
-                              build/default/production/main.o (__divsf3)
+                              build/default/production/mTimer0.o (__divsf3)
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3x.o)
                               c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o) (__divsf3x)
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fixunssfsi.o)
-                              build/default/production/main.o (__fixunssfsi)
+                              build/default/production/mTimer0.o (__fixunssfsi)
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(floatsisf.o)
-                              build/default/production/main.o (__floatsisf)
+                              build/default/production/mTimer0.o (__floatsisf)
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_inf.o)
                               c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3x.o) (__fp_inf)
 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(fp_nan.o)
@@ -40,8 +40,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/main.o
  .data          0x0000000000000000        0x0 build/default/production/main.o
  .bss           0x0000000000000000        0x0 build/default/production/main.o
- .text.setCompareValue
-                0x0000000000000000        0x4 build/default/production/main.o
  .text          0x0000000000000000        0x0 build/default/production/mKIT.o
  .data          0x0000000000000000        0x0 build/default/production/mKIT.o
  .bss           0x0000000000000000        0x0 build/default/production/mKIT.o
@@ -183,6 +181,11 @@ Discarded input sections
  .debug_str     0x0000000000000000        0x0 build/default/production/mADC.o
  .comment       0x0000000000000000       0x30 build/default/production/mADC.o
  .debug_frame   0x0000000000000000       0x44 build/default/production/mADC.o
+ .text          0x0000000000000000        0x0 build/default/production/mTimer0.o
+ .data          0x0000000000000000        0x0 build/default/production/mTimer0.o
+ .bss           0x0000000000000000        0x0 build/default/production/mTimer0.o
+ .text.setCompareValue
+                0x0000000000000000        0x4 build/default/production/mTimer0.o
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(divsf3.o)
@@ -312,6 +315,7 @@ LOAD build/default/production/mLCD_4bits.o
 LOAD build/default/production/mExternalINT.o
 LOAD build/default/production/mKeypad.o
 LOAD build/default/production/mADC.o
+LOAD build/default/production/mTimer0.o
 START GROUP
 LOAD c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a
 END GROUP
@@ -571,6 +575,7 @@ END GROUP
                                          0x30 (size before relaxing)
  .comment       0x000000000000002f       0x30 build/default/production/mDIO.o
  .comment       0x000000000000002f       0x30 build/default/production/mLCD_4bits.o
+ .comment       0x000000000000002f       0x30 build/default/production/mTimer0.o
 
 .stack.descriptors.hdr
                 0x0000000000000000       0xd2
@@ -620,57 +625,65 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000       0xf8
+.debug_aranges  0x0000000000000000      0x110
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x38 build/default/production/main.o
+                0x0000000000000000       0x20 build/default/production/main.o
  .debug_aranges
-                0x0000000000000038       0x58 build/default/production/mDIO.o
+                0x0000000000000020       0x58 build/default/production/mDIO.o
  .debug_aranges
-                0x0000000000000090       0x68 build/default/production/mLCD_4bits.o
+                0x0000000000000078       0x68 build/default/production/mLCD_4bits.o
+ .debug_aranges
+                0x00000000000000e0       0x30 build/default/production/mTimer0.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x190f
+.debug_info     0x0000000000000000     0x1b3a
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x4e6 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_info    0x00000000000004e6      0x5c3 build/default/production/main.o
- .debug_info    0x0000000000000aa9      0x3d9 build/default/production/mDIO.o
- .debug_info    0x0000000000000e82      0xa8d build/default/production/mLCD_4bits.o
+ .debug_info    0x00000000000004e6      0x4d0 build/default/production/main.o
+ .debug_info    0x00000000000009b6      0x3d9 build/default/production/mDIO.o
+ .debug_info    0x0000000000000d8f      0xa8d build/default/production/mLCD_4bits.o
+ .debug_info    0x000000000000181c      0x31e build/default/production/mTimer0.o
 
-.debug_abbrev   0x0000000000000000      0x8b4
+.debug_abbrev   0x0000000000000000      0x921
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x4a3 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_abbrev  0x00000000000004a3      0x1b4 build/default/production/main.o
- .debug_abbrev  0x0000000000000657       0x8d build/default/production/mDIO.o
- .debug_abbrev  0x00000000000006e4      0x1d0 build/default/production/mLCD_4bits.o
+ .debug_abbrev  0x00000000000004a3      0x134 build/default/production/main.o
+ .debug_abbrev  0x00000000000005d7       0x8d build/default/production/mDIO.o
+ .debug_abbrev  0x0000000000000664      0x1d0 build/default/production/mLCD_4bits.o
+ .debug_abbrev  0x0000000000000834       0xed build/default/production/mTimer0.o
 
-.debug_line     0x0000000000000000      0x8cc
+.debug_line     0x0000000000000000      0x944
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x119 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_line    0x0000000000000119      0x230 build/default/production/main.o
- .debug_line    0x0000000000000349      0x268 build/default/production/mDIO.o
- .debug_line    0x00000000000005b1      0x31b build/default/production/mLCD_4bits.o
+ .debug_line    0x0000000000000119      0x1a4 build/default/production/main.o
+ .debug_line    0x00000000000002bd      0x268 build/default/production/mDIO.o
+ .debug_line    0x0000000000000525      0x31b build/default/production/mLCD_4bits.o
+ .debug_line    0x0000000000000840      0x104 build/default/production/mTimer0.o
 
-.debug_frame    0x0000000000000000      0x1fc
+.debug_frame    0x0000000000000000      0x210
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0x60 build/default/production/main.o
- .debug_frame   0x0000000000000060       0x94 build/default/production/mDIO.o
- .debug_frame   0x00000000000000f4      0x108 build/default/production/mLCD_4bits.o
+ .debug_frame   0x0000000000000000       0x24 build/default/production/main.o
+ .debug_frame   0x0000000000000024       0x94 build/default/production/mDIO.o
+ .debug_frame   0x00000000000000b8      0x108 build/default/production/mLCD_4bits.o
+ .debug_frame   0x00000000000001c0       0x50 build/default/production/mTimer0.o
 
-.debug_str      0x0000000000000000      0x223
+.debug_str      0x0000000000000000      0x23c
  *(.debug_str)
  .debug_str     0x0000000000000000      0x196 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_str     0x0000000000000196       0x5d build/default/production/main.o
- .debug_str     0x00000000000001f3        0xf build/default/production/mDIO.o
- .debug_str     0x0000000000000202       0x21 build/default/production/mLCD_4bits.o
+ .debug_str     0x0000000000000196       0x6c build/default/production/main.o
+ .debug_str     0x0000000000000202        0xf build/default/production/mDIO.o
+ .debug_str     0x0000000000000211       0x21 build/default/production/mLCD_4bits.o
+ .debug_str     0x0000000000000232        0xa build/default/production/mTimer0.o
 
 .debug_loc      0x0000000000000000      0x8dc
  *(.debug_loc)
- .debug_loc     0x0000000000000000       0xd4 build/default/production/main.o
- .debug_loc     0x00000000000000d4      0x300 build/default/production/mDIO.o
- .debug_loc     0x00000000000003d4      0x508 build/default/production/mLCD_4bits.o
+ .debug_loc     0x0000000000000000       0x48 build/default/production/main.o
+ .debug_loc     0x0000000000000048      0x300 build/default/production/mDIO.o
+ .debug_loc     0x0000000000000348      0x508 build/default/production/mLCD_4bits.o
+ .debug_loc     0x0000000000000850       0x8c build/default/production/mTimer0.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -690,11 +703,12 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000       0xc8
+.debug_ranges   0x0000000000000000       0xd0
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x28 build/default/production/main.o
- .debug_ranges  0x0000000000000028       0x48 build/default/production/mDIO.o
- .debug_ranges  0x0000000000000070       0x58 build/default/production/mLCD_4bits.o
+ .debug_ranges  0x0000000000000000       0x10 build/default/production/main.o
+ .debug_ranges  0x0000000000000010       0x48 build/default/production/mDIO.o
+ .debug_ranges  0x0000000000000058       0x58 build/default/production/mLCD_4bits.o
+ .debug_ranges  0x00000000000000b0       0x20 build/default/production/mTimer0.o
 
 .debug_macro
  *(.debug_macro)
@@ -754,7 +768,7 @@ LOAD data_init
 .text.init_Timer0
                 0x0000000000000548       0x60
  .text.init_Timer0
-                0x0000000000000548       0x60 build/default/production/main.o
+                0x0000000000000548       0x60 build/default/production/mTimer0.o
                 0x0000000000000548                init_Timer0
 
 .text.avrlibc.fplib
@@ -796,7 +810,7 @@ LOAD data_init
 .text.setDutyCycle
                 0x000000000000075c       0x28
  .text.setDutyCycle
-                0x000000000000075c       0x28 build/default/production/main.o
+                0x000000000000075c       0x28 build/default/production/mTimer0.o
                 0x000000000000075c                setDutyCycle
 
 .text.LCD_EN_4bits
