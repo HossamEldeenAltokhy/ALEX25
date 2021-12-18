@@ -7,8 +7,8 @@ void initKeyPad() {
     setPinOUT(KeyPad_OUT_DIR, 1);
     setPinOUT(KeyPad_OUT_DIR, 2);
     //////////////////
-    setPinIN(KeyPad_IN_DIR, 4);
-    setPinIN(KeyPad_IN_DIR, 5);
+    setPinIN(KeyPad_IN_DIR, 4); // 1,2 or 3
+    setPinIN(KeyPad_IN_DIR, 5); // 4,5 or 6
     setPinIN(KeyPad_IN_DIR, 6);
     setPinIN(KeyPad_IN_DIR, 7);
     //////////////////
