@@ -24,9 +24,13 @@
 #define CTC         2
 #define FPWM        3
 
+// Interrupts
+#define TOV0        0
+#define OCF0        1
+
 void init_Timer0(unsigned char mode, unsigned char Clk);
 void setCompareValue(unsigned char ocrValue);
 void setDutyCycle(unsigned char dutyCycle_percentage);
-
+void Timer0_enableINT(unsigned char INT);
 #endif	/* MTIMER0_H */
 

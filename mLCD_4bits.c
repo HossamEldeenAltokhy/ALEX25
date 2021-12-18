@@ -41,25 +41,25 @@ void LCD_cmd_4bits(char cmd){
     resetPin(controlBits, RS);
     LCD_DATA_Half = (LCD_DATA_Half & 0x0F)|(cmd & 0xF0);
     LCD_EN_4bits();
-    _delay_ms(2);
+    _delay_us(10);
     LCD_DATA_Half = (LCD_DATA_Half & 0x0F)|(cmd << 4);
     LCD_EN_4bits();
-    _delay_ms(2);
+    _delay_us(10);
 }
 
 void LCD_write_4bits(char data){
     setPin(controlBits, RS);
     LCD_DATA_Half = (LCD_DATA_Half & 0x0F)|(data & 0xF0);
     LCD_EN_4bits();
-    _delay_ms(2);
+    _delay_us(10);
     LCD_DATA_Half = (LCD_DATA_Half & 0x0F)|(data << 4);
     LCD_EN_4bits();
-    _delay_ms(2);
+    _delay_us(10);
 }
 
 void LCD_EN_4bits(){
     setPin(controlBits, EN);
-    _delay_ms(5);
+    _delay_ms(1);
     resetPin(controlBits, EN);
 }
 

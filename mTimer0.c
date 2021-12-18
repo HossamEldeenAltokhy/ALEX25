@@ -34,7 +34,7 @@ void init_Timer0(unsigned char mode, unsigned char Clk) {
             break;
     }
 
-    TCCR0 |= (1 << COM01); // TOGGLE ON OC0 PIN
+    //TCCR0 |= (1 << COM01); // TOGGLE ON OC0 PIN
 
     // TCCR0... Timer Counter Control Register.
     // Selecting Clock source and value
@@ -50,6 +50,18 @@ void init_Timer0(unsigned char mode, unsigned char Clk) {
     //    TIMSK |= (1 << OCIE0);
 
 
+}
+
+void Timer0_enableINT(unsigned char INT){
+    switch(INT){
+        case TOV0:
+            TIMSK |= (1 << TOIE0);
+            break;
+        case OCF0:
+            TIMSK |= (1 << OCIE0);
+            break;
+            
+    }
 }
 
 
