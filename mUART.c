@@ -12,12 +12,15 @@ void init_UART(unsigned int BaudRate){
     // Configuration for RXEN , TXEN
     UCSRB |= (1<<RXEN)|(1<<TXEN);
     
+    // Enable Interrupt TX
+    UCSRB |= (1<<RXCIE);
+    
 }
 
 
 
 char UART_read(){
-    while(!(UCSRA & (1<<RXC)));
+    //while(!(UCSRA & (1<<RXC)));
     return UDR;
 }
 void UART_send(char data){

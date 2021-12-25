@@ -17,7 +17,8 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\interrupt.h \
  mADC.h mTimer0.h mUART.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\stdlib.h \
- c:\program\ files\microchip\xc8\v2.32\avr\lib\gcc\avr\5.4.0\include\stddef.h
+ c:\program\ files\microchip\xc8\v2.32\avr\lib\gcc\avr\5.4.0\include\stddef.h \
+ mLCD_8bits.h
 
 config.h:
 
@@ -70,3 +71,5 @@ mUART.h:
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\stdlib.h:
 
 c:\program\ files\microchip\xc8\v2.32\avr\lib\gcc\avr\5.4.0\include\stddef.h:
+
+mLCD_8bits.h:
