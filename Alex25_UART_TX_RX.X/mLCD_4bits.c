@@ -89,12 +89,7 @@ void LCD_goto_xy_4bits(int row, int coln){
     }
     else if(row == 1){
             LCD_cmd_4bits(0xC0 | coln);
-    }
-    else if(row == 2){
-            LCD_cmd_4bits(0x90 | coln);
-    }
-    else if(row == 3){
-            LCD_cmd_4bits(0xD0 | coln);
+
     }
     else{
         // Nothing

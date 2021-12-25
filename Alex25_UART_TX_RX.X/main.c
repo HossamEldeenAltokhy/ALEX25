@@ -14,24 +14,27 @@ void Timer1_enableINT(unsigned char INT);
 void setCompareValue_A(unsigned short compValue);
 void setCompareValue_B(unsigned short compValue);
 
-char str1[] = "LED is ON\r";
-char str2[] = "LED is OFF\r";
+
 
 ISR(USART_RXC_vect) {
 
 
-    char receivedData = UART_read();
 
-    if (receivedData == 'A') {
-        LCD_goto_xy_4bits(3, 0);
-        LCD_str_4bits(str1);
-    } else if (receivedData == 'B') {
-        LCD_goto_xy_4bits(3, 0);
 
-        LCD_str_4bits(str2);
-    } else {
-        // No thing
+    char data = UART_read();
+
+    if (data == 'k') {
+        setPortData(_PA, 0xFF);
+        UART_send('A');
+    } else if (data == 'o') {
+        setPortData(_PA, 0x00);
+        UART_send('B');
+
     }
+    else{
+        // Nothing
+    }
+
 
 
 
@@ -41,25 +44,13 @@ char str[] = "Hello";
 int main(void) {
     /* Replace with your application code */
 
-    //    setPortOUT(_PA);
+    setPortOUT(_PA);
     init_UART(9600);
-    initLCD_4bits();
-    init_ADC(CH0, _AREF, _PS128);
+
     sei();
 
     while (1) {
 
-        ADC_SC();
-        int data = ADC_read()*4.8828125;
-        LCD_clear_4bits();
-        LCD_num_4bits(data);
-        if (data > 2500) {
-            UART_send('k');
-        } else {
-            UART_send('o');
-        }
-
-        _delay_ms(500);
 
 
     }
