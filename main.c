@@ -4,6 +4,7 @@
 
 #include "config.h"
 #include "mLCD_8bits.h"
+#include "string.h"
 
 #define TOVF1   0
 #define OCF1    1
@@ -17,12 +18,32 @@ void setCompareValue_B(unsigned short compValue);
 
 ISR(USART_RXC_vect){
     
-    char data;
-    LCD_write_4bits(data = UART_read());
+    static char data[10];
+    static int index  =0;
     
-    if(data == 'A'){
-        togglePortData(_PA);
+//    setPortData(_PA, UART_read());
+    data[index]= UART_read();
+    index++;
+    if(data[index-1] == 13){
+        if(strncmp(data, "on", 2)==0){
+            setPortData(_PA, 0xFF);
+        }
+        if(strncmp(data, "off", 3)==0){
+            setPortData(_PA, 0x00);
+        }
+        if(strncmp(data, "sample", 6)==0){
+            ADC_SC();
+            short i = ADC_read();
+            LCD_num_4bits(i);
+            UART_send('\r');
+            UART_NUM(i);
+            UART_send('\r');
+        }
+        
+        index = 0;
     }
+    
+    
     
 }
 char str[] = "Hello";
@@ -30,9 +51,10 @@ char str[] = "Hello";
 int main(void) {
     /* Replace with your application code */
 
-    setPortOUT(_PA);
+//    setPortOUT(_PA);
     init_UART(9600);
     initLCD_4bits();
+    init_ADC(CH0, _AREF, _PS128);
     sei();
 
     while (1) {
