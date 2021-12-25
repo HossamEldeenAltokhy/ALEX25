@@ -1,5 +1,6 @@
-build/default/production/main.o.d build/default/production/main.o: main.c \
- config.h c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h \
+build/default/production/mUART.o.d build/default/production/mUART.o: \
+ mUART.c config.h \
+ c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\sfr_defs.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\inttypes.h \
  c:\program\ files\microchip\xc8\v2.32\avr\lib\gcc\avr\5.4.0\include\stdint.h \

@@ -26,6 +26,10 @@
 #include <avr/interrupt.h>
 #include "mADC.h"
 #include "mTimer0.h"
+#include "mUART.h"
+
+#include <stdlib.h>
+
 
 #endif	/* CONFIG_H */
 

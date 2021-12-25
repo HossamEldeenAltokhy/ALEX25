@@ -10,81 +10,88 @@
 void init_Timer1(unsigned char mode, unsigned char Clk);
 void Timer1_enableINT(unsigned char INT);
 void setCompareValue_A(unsigned short compValue);
+void setCompareValue_B(unsigned short compValue);
 
-//ISR(TIMER1_COMPA_vect){
-//    togglePortData(_PA);
-//}
+
+
+
+char str[] = "Hello";
 
 int main(void) {
     /* Replace with your application code */
-//    initLCD_4bits();
-    setPortOUT(_PA);
-    setPinOUT(_PD, PD5);
-    setPinOUT(_PD, PD4);
-    setCompareValue_A(500);
-    init_Timer1(FPWM, Timer_PS1024);
-    
-//    Timer1_enableINT(OCF1);
-   
-    // Global INT Enable
-    sei();
+
+    initLCD_4bits();
+    init_UART(9600);
+    short data = 0;
+    init_ADC(CH0,_AREF, _PS128);
     while (1) {
 
-       
-
+        ADC_SC();
+        data = ADC_read()*4.88;
+        
+        UART_NUM(data);
+        UART_send('\r');
+        
 
     }
 }
 
-
-void init_Timer1(unsigned char mode, unsigned char Clk){
-    switch(mode){
+void init_Timer1(unsigned char mode, unsigned char Clk) {
+    switch (mode) {
         case NormalMode:
-            TCCR1A &= ~((1<<WGM11)|(1<<WGM10));
-            TCCR1B &= ~((1<<WGM13)|(1<<WGM12));
+            TCCR1A &= ~((1 << WGM11) | (1 << WGM10));
+            TCCR1B &= ~((1 << WGM13) | (1 << WGM12));
             break;
         case CTC:
-            TCCR1A &= ~((1<<WGM11)|(1<<WGM10));
-            TCCR1B &= ~(1<<WGM13);
-            TCCR1B |= (1<<WGM12);
+            TCCR1A &= ~((1 << WGM11) | (1 << WGM10));
+            TCCR1B &= ~(1 << WGM13);
+            TCCR1B |= (1 << WGM12);
             break;
         case PWM:
-            TCCR1A |= ((1<<WGM10));
-//            TCCR1B &= ~(1<<WGM12);
-            TCCR1B |= (1<<WGM13);
+            TCCR1A |= ((1 << WGM11));
+            TCCR1B &= ~(1 << WGM12);
+            TCCR1B |= (1 << WGM13);
             // Set compare output pin 
-            TCCR1A |= (1<<COM1A1);
+            TCCR1A |= (1 << COM1A1);
+            TCCR1A |= (1 << COM1B1);
             break;
         case FPWM:
-            TCCR1A |= ((1<<WGM11)|(1<<WGM10));
-            TCCR1B |= ((1<<WGM13)|(1<<WGM12));
+            TCCR1A |= ((1 << WGM10));
+            TCCR1B |= ((1 << WGM12));
             // Set compare output pin 
-            TCCR1A |= (1<<COM1A1);
+            TCCR1A |= (1 << COM1A1);
             break;
-            
+
     }
-    
+
     TCCR1B |= Clk;
-    
-    
-    
-    
+
+
+
+
 }
 
-void Timer1_enableINT(unsigned char INT){
-    switch(INT){
+void Timer1_enableINT(unsigned char INT) {
+    switch (INT) {
         case TOVF1:
-            TIMSK |= (1<<TOIE1);
+            TIMSK |= (1 << TOIE1);
             break;
         case OCF1:
-            TIMSK |= (1<<OCF1A);
+            TIMSK |= (1 << OCF1A);
             break;
     }
 }
 
-void setCompareValue_A(unsigned short compValue){
-    
-//    OCR1AL = (unsigned char) compValue;
-//    OCR1AH = (unsigned char) (compValue >> 8);
+void setCompareValue_A(unsigned short compValue) {
+
+    //    OCR1AL = (unsigned char) compValue;
+    //    OCR1AH = (unsigned char) (compValue >> 8);
     OCR1A = compValue;
+}
+
+void setCompareValue_B(unsigned short compValue) {
+
+    //    OCR1AL = (unsigned char) compValue;
+    //    OCR1AH = (unsigned char) (compValue >> 8);
+    OCR1B = compValue;
 }
