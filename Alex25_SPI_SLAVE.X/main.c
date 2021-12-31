@@ -23,17 +23,16 @@ char SPI_read(void);
 
 int main(void) {
     /* Replace with your application code */
+    initLCD_4bits();
+    init_SPI(SLAVE);
+  
+    
 
-    init_SPI(MASTER);
-    
-    
-    
-    _delay_ms(2000);
     while (1) {
 
-        SPI_write('A');
-
-        _delay_ms(200);
+        char data = SPI_read();
+        LCD_clear_4bits();
+        LCD_write_4bits(data);
 
     }
 }
