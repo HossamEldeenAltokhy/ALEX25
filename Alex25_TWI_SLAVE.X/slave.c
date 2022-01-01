@@ -27,18 +27,21 @@ int TWI_waiting();
 void TWI_MT(char SLA, unsigned data);
 char TWI_SR();
 
+void TWI_ST(char data);
+
+
+
 int main(void) {
     /* Replace with your application code */
 
-    setPortOUT(_PD);
     init_TWI();
     
     
-  setPortData(_PD, TWI_SR());
+    
+    
     while (1) {
 
-        
-//        _delay_ms(500);
+        TWI_ST('A');
 
     }
 }
@@ -121,6 +124,8 @@ int TWI_waiting(){
     char status = TWSR & 0xF8;
     if(status == 0x60){
         return 1;
+    }else if(status == 0xA8){
+        return 2;
     }else{
         return 0;
     }
@@ -141,10 +146,25 @@ char TWI_receive(){
 }
 
 char TWI_SR(){
-    if(TWI_waiting()){
+    if(TWI_waiting()==1){
+        // Slave Receiver
         return TWI_receive();
     }
     else{
         return 0;
     }
+}
+
+void TWI_ST(char data){
+    if(TWI_waiting()==2){
+        // Slave Transmitter
+        TWDR = data;
+        TWCR |= (1<<TWINT)|(1<<TWEN);
+        while(!(TWCR & (1<<TWINT)));
+        char status = TWSR & 0xF8;
+        if(status == 0xB8){
+            // Finished
+        }
+    }
+   
 }

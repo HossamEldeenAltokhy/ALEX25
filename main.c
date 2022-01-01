@@ -21,18 +21,20 @@ int TWI_start();
 int TWI_call(char SLA);
 int TWI_send(unsigned data);
 void TWI_stop();
+int TWI_M_wait();
+char TWI_M_receive();
 
 void TWI_MT(char SLA, unsigned data);
-
+char TWI_MR(char SLA);
 int main(void) {
     /* Replace with your application code */
-
+    setPortOUT(_PA);
     init_TWI();
     
     _delay_ms(1000);
-    TWI_MT(SLA_W, 'A');
+    char data = TWI_MR(SLA_R);
+    setPortData(_PA, data);
     
-  
     while (1) {
 
         
@@ -109,3 +111,35 @@ void TWI_MT(char SLA, unsigned data){
     
    
 }
+
+int TWI_M_wait(){
+    TWCR |= (1<<TWEA) | (1<<TWINT)|(1<<TWEN);
+    while(!(TWCR & (1<<TWINT)));
+    char status = TWSR & 0xF8;
+    if(status == 50){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+
+char TWI_M_receive(){
+    return TWDR;
+}
+
+char TWI_MR(char SLA){
+    
+    int data;
+    if(TWI_start()){
+        if(TWI_call(SLA_R)==2){
+            TWI_M_wait();
+            data = TWI_M_receive();
+            TWI_stop();
+            return data;
+        }
+    }
+    
+    return 0;
+}
+

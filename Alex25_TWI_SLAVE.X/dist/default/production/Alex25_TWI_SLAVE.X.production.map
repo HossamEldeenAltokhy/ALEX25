@@ -86,6 +86,8 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/mDIO.o
  .data          0x0000000000000000        0x0 build/default/production/mDIO.o
  .bss           0x0000000000000000        0x0 build/default/production/mDIO.o
+ .text.setPortOUT
+                0x0000000000000000       0x32 build/default/production/mDIO.o
  .text.setPortIN
                 0x0000000000000000       0x2a build/default/production/mDIO.o
  .text.setPinOUT
@@ -95,8 +97,20 @@ Discarded input sections
  .text.setPin   0x0000000000000000       0x72 build/default/production/mDIO.o
  .text.resetPin
                 0x0000000000000000       0x7a build/default/production/mDIO.o
+ .text.setPortData
+                0x0000000000000000       0x2a build/default/production/mDIO.o
  .text.togglePortData
                 0x0000000000000000       0x3a build/default/production/mDIO.o
+ .debug_info    0x0000000000000000      0x3e3 build/default/production/mDIO.o
+ .debug_abbrev  0x0000000000000000       0x8d build/default/production/mDIO.o
+ .debug_loc     0x0000000000000000      0x300 build/default/production/mDIO.o
+ .debug_aranges
+                0x0000000000000000       0x58 build/default/production/mDIO.o
+ .debug_ranges  0x0000000000000000       0x48 build/default/production/mDIO.o
+ .debug_line    0x0000000000000000      0x268 build/default/production/mDIO.o
+ .debug_str     0x0000000000000000        0xf build/default/production/mDIO.o
+ .comment       0x0000000000000000       0x30 build/default/production/mDIO.o
+ .debug_frame   0x0000000000000000       0x94 build/default/production/mDIO.o
  .text          0x0000000000000000        0x0 build/default/production/mLCD_8bits.o
  .data          0x0000000000000000        0x0 build/default/production/mLCD_8bits.o
  .bss           0x0000000000000000        0x0 build/default/production/mLCD_8bits.o
@@ -282,6 +296,9 @@ Discarded input sections
  .text.TWI_stop
                 0x0000000000000000        0x8 build/default/production/slave.o
  .text.TWI_MT   0x0000000000000000       0x2e build/default/production/slave.o
+ .text.TWI_receive
+                0x0000000000000000       0x1c build/default/production/slave.o
+ .text.TWI_SR   0x0000000000000000       0x12 build/default/production/slave.o
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
@@ -719,9 +736,8 @@ END GROUP
 
 .comment        0x0000000000000000       0x2f
  *(.comment)
- .comment       0x0000000000000000       0x2f build/default/production/mDIO.o
+ .comment       0x0000000000000000       0x2f build/default/production/slave.o
                                          0x30 (size before relaxing)
- .comment       0x000000000000002f       0x30 build/default/production/slave.o
 
 .stack.descriptors.hdr
                 0x0000000000000000        0xe
@@ -743,49 +759,41 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000       0xc0
+.debug_aranges  0x0000000000000000       0x70
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x58 build/default/production/mDIO.o
- .debug_aranges
-                0x0000000000000058       0x68 build/default/production/slave.o
+                0x0000000000000000       0x70 build/default/production/slave.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000      0xd54
+.debug_info     0x0000000000000000      0x97c
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x4e6 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_info    0x00000000000004e6      0x3e3 build/default/production/mDIO.o
- .debug_info    0x00000000000008c9      0x48b build/default/production/slave.o
+ .debug_info    0x00000000000004e6      0x496 build/default/production/slave.o
 
-.debug_abbrev   0x0000000000000000      0x642
+.debug_abbrev   0x0000000000000000      0x5b9
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x4a3 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_abbrev  0x00000000000004a3       0x8d build/default/production/mDIO.o
- .debug_abbrev  0x0000000000000530      0x112 build/default/production/slave.o
+ .debug_abbrev  0x00000000000004a3      0x116 build/default/production/slave.o
 
-.debug_line     0x0000000000000000      0x5ba
+.debug_line     0x0000000000000000      0x39d
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x119 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_line    0x0000000000000119      0x268 build/default/production/mDIO.o
- .debug_line    0x0000000000000381      0x239 build/default/production/slave.o
+ .debug_line    0x0000000000000119      0x284 build/default/production/slave.o
 
-.debug_frame    0x0000000000000000      0x158
+.debug_frame    0x0000000000000000       0xdc
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0x94 build/default/production/mDIO.o
- .debug_frame   0x0000000000000094       0xc4 build/default/production/slave.o
+ .debug_frame   0x0000000000000000       0xdc build/default/production/slave.o
 
-.debug_str      0x0000000000000000      0x1c3
+.debug_str      0x0000000000000000      0x19d
  *(.debug_str)
  .debug_str     0x0000000000000000      0x196 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_str     0x0000000000000196        0xf build/default/production/mDIO.o
- .debug_str     0x00000000000001a5       0x1e build/default/production/slave.o
+ .debug_str     0x0000000000000196        0x7 build/default/production/slave.o
 
-.debug_loc      0x0000000000000000      0x475
+.debug_loc      0x0000000000000000      0x1a7
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x300 build/default/production/mDIO.o
- .debug_loc     0x0000000000000300      0x175 build/default/production/slave.o
+ .debug_loc     0x0000000000000000      0x1a7 build/default/production/slave.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -805,10 +813,9 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000       0xa0
+.debug_ranges   0x0000000000000000       0x60
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x48 build/default/production/mDIO.o
- .debug_ranges  0x0000000000000048       0x58 build/default/production/slave.o
+ .debug_ranges  0x0000000000000000       0x60 build/default/production/slave.o
 
 .debug_macro
  *(.debug_macro)
@@ -821,63 +828,45 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x3c C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
 
-.text.setPortOUT
-                0x000000000000006c       0x32
- .text.setPortOUT
-                0x000000000000006c       0x32 build/default/production/mDIO.o
-                0x000000000000006c                setPortOUT
-
-.text.setPortData
-                0x000000000000009e       0x2a
- .text.setPortData
-                0x000000000000009e       0x2a build/default/production/mDIO.o
-                0x000000000000009e                setPortData
-
 .text.TWI_waiting
-                0x00000000000000c8       0x20
+                0x000000000000006c       0x2a
  .text.TWI_waiting
-                0x00000000000000c8       0x20 build/default/production/slave.o
-                0x00000000000000c8                TWI_waiting
+                0x000000000000006c       0x2a build/default/production/slave.o
+                0x000000000000006c                TWI_waiting
 
-.text.TWI_receive
-                0x00000000000000e8       0x1c
- .text.TWI_receive
-                0x00000000000000e8       0x1c build/default/production/slave.o
-                0x00000000000000e8                TWI_receive
+.text.TWI_ST    0x0000000000000096       0x20
+ .text.TWI_ST   0x0000000000000096       0x20 build/default/production/slave.o
+                0x0000000000000096                TWI_ST
 
-.text.main      0x0000000000000104       0x1c
- .text.main     0x0000000000000104       0x1c build/default/production/slave.o
-                0x0000000000000104                main
+.text.main      0x00000000000000b6        0xc
+ .text.main     0x00000000000000b6        0xc build/default/production/slave.o
+                0x00000000000000b6                main
 
-.text.TWI_SR    0x0000000000000120       0x12
- .text.TWI_SR   0x0000000000000120       0x12 build/default/production/slave.o
-                0x0000000000000120                TWI_SR
-
-.text.init_TWI  0x0000000000000132        0xa
+.text.init_TWI  0x00000000000000c2        0xa
  .text.init_TWI
-                0x0000000000000132        0xa build/default/production/slave.o
-                0x0000000000000132                init_TWI
+                0x00000000000000c2        0xa build/default/production/slave.o
+                0x00000000000000c2                init_TWI
 
-.text           0x000000000000013c        0x4
- .text          0x000000000000013c        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
-                0x000000000000013c                __vector_1
-                0x000000000000013c                __vector_12
-                0x000000000000013c                __bad_interrupt
-                0x000000000000013c                __vector_6
-                0x000000000000013c                __vector_3
-                0x000000000000013c                __vector_11
-                0x000000000000013c                __vector_13
-                0x000000000000013c                __vector_17
-                0x000000000000013c                __vector_19
-                0x000000000000013c                __vector_7
-                0x000000000000013c                __vector_5
-                0x000000000000013c                __vector_4
-                0x000000000000013c                __vector_9
-                0x000000000000013c                __vector_2
-                0x000000000000013c                __vector_15
-                0x000000000000013c                __vector_8
-                0x000000000000013c                __vector_14
-                0x000000000000013c                __vector_10
-                0x000000000000013c                __vector_16
-                0x000000000000013c                __vector_18
-                0x000000000000013c                __vector_20
+.text           0x00000000000000cc        0x4
+ .text          0x00000000000000cc        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
+                0x00000000000000cc                __vector_1
+                0x00000000000000cc                __vector_12
+                0x00000000000000cc                __bad_interrupt
+                0x00000000000000cc                __vector_6
+                0x00000000000000cc                __vector_3
+                0x00000000000000cc                __vector_11
+                0x00000000000000cc                __vector_13
+                0x00000000000000cc                __vector_17
+                0x00000000000000cc                __vector_19
+                0x00000000000000cc                __vector_7
+                0x00000000000000cc                __vector_5
+                0x00000000000000cc                __vector_4
+                0x00000000000000cc                __vector_9
+                0x00000000000000cc                __vector_2
+                0x00000000000000cc                __vector_15
+                0x00000000000000cc                __vector_8
+                0x00000000000000cc                __vector_14
+                0x00000000000000cc                __vector_10
+                0x00000000000000cc                __vector_16
+                0x00000000000000cc                __vector_18
+                0x00000000000000cc                __vector_20
