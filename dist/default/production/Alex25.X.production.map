@@ -42,8 +42,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/main.o
  .data          0x0000000000000000        0x0 build/default/production/main.o
  .bss           0x0000000000000000        0x0 build/default/production/main.o
- .text.SPI_read
-                0x0000000000000000        0x8 build/default/production/main.o
  .text          0x0000000000000000        0x0 build/default/production/mKIT.o
  .data          0x0000000000000000        0x0 build/default/production/mKIT.o
  .bss           0x0000000000000000        0x0 build/default/production/mKIT.o
@@ -258,6 +256,11 @@ Discarded input sections
  .debug_str     0x0000000000000000        0xe build/default/production/mUART.o
  .comment       0x0000000000000000       0x30 build/default/production/mUART.o
  .debug_frame   0x0000000000000000       0x80 build/default/production/mUART.o
+ .text          0x0000000000000000        0x0 build/default/production/mSPI.o
+ .data          0x0000000000000000        0x0 build/default/production/mSPI.o
+ .bss           0x0000000000000000        0x0 build/default/production/mSPI.o
+ .text.SPI_read
+                0x0000000000000000        0x8 build/default/production/mSPI.o
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a(addsf3.o)
@@ -444,6 +447,7 @@ LOAD build/default/production/mKeypad.o
 LOAD build/default/production/mADC.o
 LOAD build/default/production/mTimer0.o
 LOAD build/default/production/mUART.o
+LOAD build/default/production/mSPI.o
 START GROUP
 LOAD c:/program files/microchip/xc8/v2.32/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libm.a
 END GROUP
@@ -697,6 +701,7 @@ END GROUP
  .comment       0x0000000000000000       0x2f build/default/production/main.o
                                          0x30 (size before relaxing)
  .comment       0x000000000000002f       0x30 build/default/production/mDIO.o
+ .comment       0x000000000000002f       0x30 build/default/production/mSPI.o
 
 .stack.descriptors.hdr
                 0x0000000000000000        0xe
@@ -718,49 +723,56 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000       0x90
+.debug_aranges  0x0000000000000000       0xa8
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x38 build/default/production/main.o
+                0x0000000000000000       0x20 build/default/production/main.o
  .debug_aranges
-                0x0000000000000038       0x58 build/default/production/mDIO.o
+                0x0000000000000020       0x58 build/default/production/mDIO.o
+ .debug_aranges
+                0x0000000000000078       0x30 build/default/production/mSPI.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000      0xd10
+.debug_info     0x0000000000000000      0xf2f
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x4e6 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_info    0x00000000000004e6      0x451 build/default/production/main.o
- .debug_info    0x0000000000000937      0x3d9 build/default/production/mDIO.o
+ .debug_info    0x00000000000004e6      0x34b build/default/production/main.o
+ .debug_info    0x0000000000000831      0x3d9 build/default/production/mDIO.o
+ .debug_info    0x0000000000000c0a      0x325 build/default/production/mSPI.o
 
-.debug_abbrev   0x0000000000000000      0x676
+.debug_abbrev   0x0000000000000000      0x6e7
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x4a3 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_abbrev  0x00000000000004a3      0x146 build/default/production/main.o
- .debug_abbrev  0x00000000000005e9       0x8d build/default/production/mDIO.o
+ .debug_abbrev  0x00000000000004a3       0xf4 build/default/production/main.o
+ .debug_abbrev  0x0000000000000597       0x8d build/default/production/mDIO.o
+ .debug_abbrev  0x0000000000000624       0xc3 build/default/production/mSPI.o
 
-.debug_line     0x0000000000000000      0x4f5
+.debug_line     0x0000000000000000      0x567
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x119 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_line    0x0000000000000119      0x174 build/default/production/main.o
- .debug_line    0x000000000000028d      0x268 build/default/production/mDIO.o
+ .debug_line    0x0000000000000119       0xed build/default/production/main.o
+ .debug_line    0x0000000000000206      0x268 build/default/production/mDIO.o
+ .debug_line    0x000000000000046e       0xf9 build/default/production/mSPI.o
 
-.debug_frame    0x0000000000000000       0xe8
+.debug_frame    0x0000000000000000       0xfc
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0x54 build/default/production/main.o
- .debug_frame   0x0000000000000054       0x94 build/default/production/mDIO.o
+ .debug_frame   0x0000000000000000       0x24 build/default/production/main.o
+ .debug_frame   0x0000000000000024       0x94 build/default/production/mDIO.o
+ .debug_frame   0x00000000000000b8       0x44 build/default/production/mSPI.o
 
-.debug_str      0x0000000000000000      0x1af
+.debug_str      0x0000000000000000      0x1c2
  *(.debug_str)
  .debug_str     0x0000000000000000      0x196 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
- .debug_str     0x0000000000000196        0xa build/default/production/main.o
- .debug_str     0x00000000000001a0        0xf build/default/production/mDIO.o
+ .debug_str     0x0000000000000196       0x13 build/default/production/main.o
+ .debug_str     0x00000000000001a9        0xf build/default/production/mDIO.o
+ .debug_str     0x00000000000001b8        0xa build/default/production/mSPI.o
 
-.debug_loc      0x0000000000000000      0x33a
+.debug_loc      0x0000000000000000      0x359
  *(.debug_loc)
- .debug_loc     0x0000000000000000       0x3a build/default/production/main.o
- .debug_loc     0x000000000000003a      0x300 build/default/production/mDIO.o
+ .debug_loc     0x0000000000000000      0x300 build/default/production/mDIO.o
+ .debug_loc     0x0000000000000300       0x59 build/default/production/mSPI.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -780,10 +792,11 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000       0x70
+.debug_ranges   0x0000000000000000       0x78
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x28 build/default/production/main.o
- .debug_ranges  0x0000000000000028       0x48 build/default/production/mDIO.o
+ .debug_ranges  0x0000000000000000       0x10 build/default/production/main.o
+ .debug_ranges  0x0000000000000010       0x48 build/default/production/mDIO.o
+ .debug_ranges  0x0000000000000058       0x20 build/default/production/mSPI.o
 
 .debug_macro
  *(.debug_macro)
@@ -804,7 +817,7 @@ LOAD data_init
 
 .text.init_SPI  0x00000000000000de       0x40
  .text.init_SPI
-                0x00000000000000de       0x40 build/default/production/main.o
+                0x00000000000000de       0x40 build/default/production/mSPI.o
                 0x00000000000000de                init_SPI
 
 .text.main      0x000000000000011e       0x32
@@ -812,31 +825,31 @@ LOAD data_init
                 0x000000000000011e                main
 
 .text.SPI_write
-                0x0000000000000150        0x8
+                0x0000000000000150        0xa
  .text.SPI_write
-                0x0000000000000150        0x8 build/default/production/main.o
+                0x0000000000000150        0xa build/default/production/mSPI.o
                 0x0000000000000150                SPI_write
 
-.text           0x0000000000000158        0x4
- .text          0x0000000000000158        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
-                0x0000000000000158                __vector_1
-                0x0000000000000158                __vector_12
-                0x0000000000000158                __bad_interrupt
-                0x0000000000000158                __vector_6
-                0x0000000000000158                __vector_3
-                0x0000000000000158                __vector_11
-                0x0000000000000158                __vector_13
-                0x0000000000000158                __vector_17
-                0x0000000000000158                __vector_19
-                0x0000000000000158                __vector_7
-                0x0000000000000158                __vector_5
-                0x0000000000000158                __vector_4
-                0x0000000000000158                __vector_9
-                0x0000000000000158                __vector_2
-                0x0000000000000158                __vector_15
-                0x0000000000000158                __vector_8
-                0x0000000000000158                __vector_14
-                0x0000000000000158                __vector_10
-                0x0000000000000158                __vector_16
-                0x0000000000000158                __vector_18
-                0x0000000000000158                __vector_20
+.text           0x000000000000015a        0x4
+ .text          0x000000000000015a        0x4 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/ATmega_DFP/2.3.126/xc8/avr/lib/avr5/memx-const/crtatmega32a.o
+                0x000000000000015a                __vector_1
+                0x000000000000015a                __vector_12
+                0x000000000000015a                __bad_interrupt
+                0x000000000000015a                __vector_6
+                0x000000000000015a                __vector_3
+                0x000000000000015a                __vector_11
+                0x000000000000015a                __vector_13
+                0x000000000000015a                __vector_17
+                0x000000000000015a                __vector_19
+                0x000000000000015a                __vector_7
+                0x000000000000015a                __vector_5
+                0x000000000000015a                __vector_4
+                0x000000000000015a                __vector_9
+                0x000000000000015a                __vector_2
+                0x000000000000015a                __vector_15
+                0x000000000000015a                __vector_8
+                0x000000000000015a                __vector_14
+                0x000000000000015a                __vector_10
+                0x000000000000015a                __vector_16
+                0x000000000000015a                __vector_18
+                0x000000000000015a                __vector_20

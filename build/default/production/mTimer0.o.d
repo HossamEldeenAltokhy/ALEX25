@@ -16,7 +16,7 @@ build/default/production/mTimer0.o.d build/default/production/mTimer0.o: \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\math.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\interrupt.h \
- mADC.h mTimer0.h mUART.h \
+ mADC.h mTimer0.h mUART.h mSPI.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\stdlib.h \
  c:\program\ files\microchip\xc8\v2.32\avr\lib\gcc\avr\5.4.0\include\stddef.h
 
@@ -67,6 +67,8 @@ mADC.h:
 mTimer0.h:
 
 mUART.h:
+
+mSPI.h:
 
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\stdlib.h:
 

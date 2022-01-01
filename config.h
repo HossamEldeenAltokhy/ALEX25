@@ -27,6 +27,7 @@
 #include "mADC.h"
 #include "mTimer0.h"
 #include "mUART.h"
+#include "mSPI.h"
 
 #include <stdlib.h>
 

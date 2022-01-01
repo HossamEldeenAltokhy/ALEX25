@@ -1,4 +1,4 @@
-build/default/production/main.o.d build/default/production/main.o: main.c \
+build/default/production/mSPI.o.d build/default/production/mSPI.o: mSPI.c \
  config.h c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\io.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\sfr_defs.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\inttypes.h \
@@ -15,11 +15,9 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\util\delay_basic.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\math.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\avr\interrupt.h \
- mADC.h mTimer0.h mUART.h \
+ mADC.h mTimer0.h mUART.h mSPI.h \
  c:\program\ files\microchip\xc8\v2.32\avr\avr\include\stdlib.h \
- c:\program\ files\microchip\xc8\v2.32\avr\lib\gcc\avr\5.4.0\include\stddef.h \
- mLCD_8bits.h \
- c:\program\ files\microchip\xc8\v2.32\avr\avr\include\string.h
+ c:\program\ files\microchip\xc8\v2.32\avr\lib\gcc\avr\5.4.0\include\stddef.h
 
 config.h:
 
@@ -69,10 +67,8 @@ mTimer0.h:
 
 mUART.h:
 
+mSPI.h:
+
 c:\program\ files\microchip\xc8\v2.32\avr\avr\include\stdlib.h:
 
 c:\program\ files\microchip\xc8\v2.32\avr\lib\gcc\avr\5.4.0\include\stddef.h:
-
-mLCD_8bits.h:
-
-c:\program\ files\microchip\xc8\v2.32\avr\avr\include\string.h:

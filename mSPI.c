@@ -1,41 +1,4 @@
-
-
-
-
 #include "config.h"
-#include "mLCD_8bits.h"
-#include "string.h"
-
-
-#define  MASTER  1
-#define  SLAVE   0
-
-#define  SPI_CLK 3
-
-#define  MOSI   5 
-#define  MISO   6 
-#define  SCK    7
-#define  SS     4
-
-void init_SPI(unsigned char mode);
-void SPI_write(unsigned char data);
-char SPI_read(void);
-
-int main(void) {
-    /* Replace with your application code */
-    initLCD_4bits();
-    init_SPI(SLAVE);
-  
-    
-
-    while (1) {
-
-        char data = SPI_read();
-        LCD_clear_4bits();
-        LCD_write_4bits(data);
-
-    }
-}
 
 
 void init_SPI(unsigned char mode){
@@ -59,9 +22,10 @@ void init_SPI(unsigned char mode){
     
 }
 
-void SPI_write(unsigned char data){
+char SPI_write(unsigned char data){
     SPDR = data;
     while(!(SPSR & (1<<SPIF)));  // waiting for 8 clocks.
+    return SPDR;
 }
 
 char SPI_read(void){
