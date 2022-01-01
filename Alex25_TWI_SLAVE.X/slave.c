@@ -8,10 +8,10 @@
 
 
 // Address of my device
-#define mAddress    0x05
+#define mAddress    0x02
 // Address of destination  >>> R/W
-#define SLA_R       0x03    // 00001111
-#define SLA_W       0x02    // 00001110
+#define SLA_R       0x0F    // 00001111
+#define SLA_W       0x0E    // 00001110
 
 
 
@@ -22,21 +22,23 @@ int TWI_call(char SLA);
 int TWI_send(unsigned data);
 void TWI_stop();
 
+int TWI_waiting();
+
 void TWI_MT(char SLA, unsigned data);
+char TWI_SR();
 
 int main(void) {
     /* Replace with your application code */
 
+    setPortOUT(_PD);
     init_TWI();
     
-    _delay_ms(1000);
-    TWI_MT(SLA_W, 'A');
     
-  
+  setPortData(_PD, TWI_SR());
     while (1) {
 
         
-        _delay_ms(500);
+//        _delay_ms(500);
 
     }
 }
@@ -46,6 +48,9 @@ void init_TWI(){
     TWAR = mAddress; // set for my address and enable GCE
     // configure SCL frequency 
     TWBR = 255;
+    
+    
+    
 }
 
 int TWI_start(){
@@ -108,4 +113,38 @@ void TWI_MT(char SLA, unsigned data){
     }
     
    
+}
+
+int TWI_waiting(){
+    TWCR |= (1<<TWEA)|(1<<TWINT)|(1<<TWEN);
+    while(!(TWCR & (1<<TWINT)));
+    char status = TWSR & 0xF8;
+    if(status == 0x60){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+char TWI_receive(){
+    TWCR |= (1<<TWEA)|(1<<TWINT)|(1<<TWEN);
+    while(!(TWCR & (1<<TWINT)));
+    char status = TWSR & 0xF8;
+    if(status == 0x80){
+//        PORTD = TWDR;
+        return TWDR;
+//        return 1;
+    }
+    else{ 
+        return 0;
+    }
+}
+
+char TWI_SR(){
+    if(TWI_waiting()){
+        return TWI_receive();
+    }
+    else{
+        return 0;
+    }
 }
